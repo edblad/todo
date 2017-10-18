@@ -2,6 +2,8 @@
 require 'parts/head.php';
 require 'parts/database.php';
 require 'parts/fetch_todos.php';
+require 'parts/add_todos.php';
+require 'parts/complete_todos.php';
 ?>
 
 <div class="wrapper">
@@ -11,6 +13,12 @@ require 'parts/fetch_todos.php';
     </header>
     
     <main>
+    <form action="index.php" method="POST">
+       <input type="text" name="title"><br />
+       <input type="text" name="createdBy"><br />
+       <input type="submit" value="Lägg till" class="btn btn-success">
+    </form>
+    <br /><br />
     <form action="index.php" method="POST">
         <?php foreach($todos as $do_this){ ?>
 
@@ -24,8 +32,7 @@ require 'parts/fetch_todos.php';
 
     <div class="done">
         <h2>Klart</h2>
-        <?php 
-        
+        <?php
         foreach($_POST as $done){
             echo $done;
             echo "<br />";
