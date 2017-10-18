@@ -3,26 +3,54 @@ body{
     background: url("../img/background.jpeg");
     background-repeat: repeat;
     background-size: cover;
+    font-family: 'Roboto', sans-serif;
 }
 
-main{
+header{
+    margin-bottom: 35px;
+    
+    h1{
+        font-family: 'Gloria Hallelujah', cursive;
+        font-size: 3em;
+    }
+}
+
+.wrapper{
     background: white;
     margin: 0 auto;
     box-shadow: 0px 0px 30px #666;
     position: relative;
     top: -10px;
-    padding: 60px;
+    padding: 20px 60px 60px 60px;
+}
+
+.done{
+    margin-top: 40px;
+    
+    h2{
+        font-family: 'Gloria Hallelujah', cursive;
+    }
+}
+
+.btn{
+    margin-top: 15px;
 }
 
 @media screen and (min-width: 520px){
-    main{
+    .wrapper{
         width: 500px;
         border-radius: 5px;
     }
 }
 
 @media screen and (min-width: 720px){
-    main{
+    .wrapper{
         width: 700px;
+    }
+}
+
+@media screen and (min-width: 920px){
+    .wrapper{
+        width: 900px;
     }
 }
