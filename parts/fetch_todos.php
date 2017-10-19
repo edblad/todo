@@ -3,7 +3,7 @@
 require 'database.php';
 
 $statement = $pdo->prepare(
-    "SELECT * FROM todos"
+    "SELECT * FROM todo"
 );
 
 $statement->execute();
