@@ -3,7 +3,8 @@ require 'parts/head.php';
 require 'parts/database.php';
 require 'parts/fetch_todos.php';
 require 'parts/add_todos.php';
-require 'parts/complete_todos.php';
+//require 'parts/complete_todos.php';
+require 'parts/delete_todos.php';
 ?>
 
 <div class="wrapper">
@@ -22,7 +23,7 @@ require 'parts/complete_todos.php';
     <form action="index.php" method="POST">
         <?php foreach($todos as $do_this){ ?>
 
-            <input type="checkbox" name="deletetask[]" id="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
+            <input type="checkbox" name="<?= $do_this["id"]; ?>" id="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
             <label for="<?= $do_this["id"]; ?>"><?= $do_this["title"]; ?></label>
             <br />
 
@@ -33,13 +34,11 @@ require 'parts/complete_todos.php';
     <div class="done">
         <h2>Klart</h2>
         <?php
-         
-        foreach ($_POST as $key => $value) {
-            echo $value . "<br />";
-        }
+        
+        
         ?>
         
-        <?php var_dump($_POST);?>
+        <?php //var_dump($_POST);?>
     </div>
    </main>
    
