@@ -3,7 +3,8 @@
 require 'database.php';
 
 $statement = $pdo->prepare(
-    "SELECT * FROM todo"
+    "SELECT * FROM todo
+    ORDER BY id DESC"
 );
 
 $statement->execute();

@@ -4,6 +4,7 @@ body{
     background-repeat: repeat;
     background-size: cover;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 header{
@@ -15,6 +16,11 @@ header{
     }
 }
 
+h2{
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-bottom: 25px
+}
+
 .wrapper{
     background: white;
     margin: 0 auto;
@@ -24,11 +30,19 @@ header{
     padding: 20px 60px 60px 60px;
 }
 
+.add_new{
+    label{
+        width:80px;
+        text-align: right;
+    }
+}
+
 .done{
     margin-top: 40px;
     
-    h2{
-        font-family: 'Gloria Hallelujah', cursive;
+    label{
+        color: #bbb;
+        text-decoration: line-through;
     }
 }
 
