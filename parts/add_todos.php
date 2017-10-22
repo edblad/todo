@@ -1,11 +1,12 @@
 <?php
 
-header("Location: ../index.php");
+//header("Location: redirect_test.php");
 
 require 'database.php';
+require 'fetch_todos.php';
 
 if(isset($_POST["title"])){
-
+    
     $statement = $pdo->prepare(
         "INSERT INTO todo (title, createdBy) 
         VALUES (:title, :createdBy)"
@@ -15,5 +16,7 @@ if(isset($_POST["title"])){
         ":title"        => $_POST["title"],
         ":createdBy"    => $_POST["createdBy"]
     ));
+    
+    $id = $pdo->lastInsertId();
+    header("Location: ../index.php?id=" . $id );
 }
-

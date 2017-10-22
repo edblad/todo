@@ -1,5 +1,7 @@
-<?php 
-header("Location: ../index.php");
+<?php
+if(isset($_POST['delete']) || isset($_POST['done'])){
+    header("Location: ../index.php");
+}
 
 require 'database.php';
 

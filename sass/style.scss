@@ -28,14 +28,20 @@ h2{
     position: relative;
     top: -10px;
     padding: 20px 60px 60px 60px;
+    
+    .add_new{
+        label{
+            width:80px;
+            text-align: right;
+        }
+
+        .added_task_message{
+            color: red;
+        }
+    }    
 }
 
-.add_new{
-    label{
-        width:80px;
-        text-align: right;
-    }
-}
+
 
 .done{
     margin-top: 40px;

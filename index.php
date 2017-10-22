@@ -4,7 +4,6 @@ require 'parts/head.php';
 require 'parts/database.php';
 require 'parts/fetch_todos.php';
 require 'parts/add_todos.php';
-//require 'parts/complete_todos.php';
 require 'parts/delete_todos.php';
 ?>
 
@@ -17,17 +16,15 @@ require 'parts/delete_todos.php';
     <main>
         <div class="add_new">
             <h2>Lägg till ny</h2>
-            <div class="added_task_message">
                <?php
-
-               if(isset($_POST["title"])){
-                   echo "YAY!";
-               }
-
+                foreach($todos as $do_this){
+                   if(isset($_GET["id"]) == $do_this["id"]){
+                        echo "<div class='added_task_message'>Du har lagt till en ny uppgift!</div>";
+                    }
+                }
                ?>
-            </div>
             <form action="parts/add_todos.php" method="POST">
-               <span class="new"><label for="title">Syssla:&nbsp;</label><input type="text" name="title"></span><br />
+               <span class="new"><label for="title">Att göra:&nbsp;</label><input type="text" name="title"></span><br />
                <label for="createdBy">Skapad av:&nbsp;</label><input type="text" name="createdBy"><br />
                <input type="submit" value="Lägg till" name="add" class="btn btn-success">
             </form>
@@ -38,8 +35,9 @@ require 'parts/delete_todos.php';
         <div class="todo">
             <h2>Att göra</h2>
             <form action="parts/delete_todos.php" method="POST">
-                <?php foreach($todos as $do_this){ 
-
+                <?php 
+                foreach($todos as $do_this){
+    
                     if($do_this["completed"] == 0){
                    ?>
                         <input type="checkbox" name="<?= $do_this["id"]; ?>" id="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
