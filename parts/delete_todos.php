@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['delete']) || isset($_POST['done']){
+if(isset($_POST['delete']) || isset($_POST['done'])){
     header("Location: ../index.php");
 }
 
