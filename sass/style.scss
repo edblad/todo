@@ -47,11 +47,12 @@ main{
                 border: none;
                 width: 70%;
             }
-            input:active{
-                
-            }
         }
     }
+}
+
+.byline{
+    color: #bbb;
 }
 
 .done{
@@ -59,7 +60,6 @@ main{
     
     label{
         color: #bbb;
-        text-decoration: line-through;
     }
 }
 
@@ -95,6 +95,7 @@ main{
 @media screen and (min-width: 720px){
     main{
         width: 700px;
+        padding: 20px 20px 60px 35px;
         
         .add_new{
             .new{

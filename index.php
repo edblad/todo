@@ -43,16 +43,15 @@ require 'parts/delete_todos.php';
         <h2>Att göra</h2>
         <form action="parts/delete_todos.php" method="POST">
             <?php 
-            foreach($todos as $do_this){
-
-                if($do_this["completed"] == 0){
-               ?>
-                    <input type="checkbox" name="<?= $do_this["id"]; ?>" id="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
-                    <label for="<?= $do_this["id"]; ?>"><?= $do_this["title"]; ?></label>
+            foreach($todos as $do_this):
+                if($do_this["completed"] == 0): ?>
+                    <input type="checkbox" name="<?= $do_this["title"]; ?>" id="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
+                    <label for="<?= $do_this["id"]; ?>"><?= $do_this["title"]; ?><span class="byline"> &ndash; <?= $do_this["createdBy"]; ?></span></label>
                     <br />
-
-            <?php }} ?>
-
+            <?php 
+            endif; 
+            endforeach; 
+            ?>
             <input type="submit" value="Klart" name="done" class="btn btn-success">
         </form>
    </div>
@@ -61,17 +60,16 @@ require 'parts/delete_todos.php';
         <h2>Klart</h2>
 
        <form action="parts/delete_todos.php" method="POST">
-        <?php foreach($todos as $do_this){ ?>
-
-            <?php 
-            if($do_this["completed"] == 1){ ?>
-                <input type="checkbox" name="<?= $do_this["id"]; ?>" id="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
+        <?php foreach($todos as $do_this): 
+            if($do_this["completed"] == 1): ?>
+                <input type="checkbox" name="<?= $do_this["title"]; ?>" id="<?= $do_this["id"]; ?>" value="<?= $do_this["id"]; ?>">
                 <label for="<?= $do_this["id"]; ?>"><?= $do_this["title"]; ?></label>
                 <br />
-            <?php } ?>
-
-        <?php } ?>
-        <input type="submit" value="Ta bort" name="delete" class="btn btn-danger">
+            <?php
+            endif; 
+            endforeach; 
+            ?>
+            <input type="submit" value="Ta bort" name="delete" class="btn btn-danger">
         </form>
     </div>
 </main>
